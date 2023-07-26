@@ -1,6 +1,19 @@
+inputs:
+  releases:
+    type: string
+    required: true
+
 runs:
   using: composite
   steps:
-  - run: sleep 30
-    shell: sh {0}
-  - uses: ${{ github.action_path }}/actions/two
+  - shell: sh {0}
+    run: sleep 30
+  - shell: sh {0}
+    run: |
+      set -ex
+      cd $GITHUB_ACTION_PATH/docker
+      for R in ${{ inputs.releases }}
+      do
+          echo docker build $R
+          echo building $( cat Dockerfile )
+      done
