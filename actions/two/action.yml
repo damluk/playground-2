@@ -1,0 +1,13 @@
+name: two
+
+runs:
+  using: composite
+  steps:
+  - run: sleep 5
+    shell: sh {0}
+  - run: sleep 10
+    shell: sh {0}
+  - run: sleep 15
+    shell: sh {0}
+  - run: sleep 20
+    shell: sh {0}

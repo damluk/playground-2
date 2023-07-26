@@ -1,5 +1,6 @@
 runs:
   using: composite
   steps:
-  - run: sleep 120
+  - run: sleep 30
     shell: sh {0}
+  - uses: ./actions/two
