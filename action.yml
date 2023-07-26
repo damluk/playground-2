@@ -3,4 +3,4 @@ runs:
   steps:
   - run: sleep 30
     shell: sh {0}
-  - uses: ./actions/two
+  - uses: ${{ github.action_path }}/actions/two
